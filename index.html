@@ -37,16 +37,8 @@
     </head>
     <body class="ukrainian-songs">
         <div data-role="page" id="all-songs">
-            <div data-role="panel" id="mypanel" data-theme="a" ng-controller="SongCategoryController">
-                <ul data-role="listview" data-theme="a" data-icon="false">
-                    <li ng-repeat="song in songs | unique: 'category'">
-                        <a href="#song-category" data-transition="slide" ng-click="selectCategory(song.category)"  value="{{song.id}}">{{song.category}}</a>
-                    </li>
-                </ul>
-            </div>
             <div data-role="header" data-theme="a" data-position="fixed">
                 <h1>Piosenki</h1>
-                <a href="#mypanel" data-role="button" data-iconpos="notext" data-icon="flat-menu" data-theme="a" data-wrapperless="span"></a>
             </div>
             <div data-role="content" ng-controller="SongListController">
                 <input type="search" data-role="search" ng-model="query" />
@@ -64,19 +56,8 @@
         </div>
 
         <div data-role="page" id="song-detail">
-            <div data-role="panel" data-theme="a" id="mypanel" ng-controller="SongCategoryController">
-                <ul data-role="listview" data-theme="a" data-icon="false">
-                    <li ng-repeat="song in songs | unique: 'category'">
-                        <a href="#song-category" data-transition="slide" ng-click="selectCategory(song.category)"  value="{{song.id}}">{{song.category}}</a>
-                    </li>
-                    <li>
-                        <a href="#all-songs" data-transition="slide" value="{{song.id}}">All</a>
-                    </li>
-                </ul>
-            </div>
             <div data-role="header" data-theme="a" data-position="fixed">
                 <h1>Piosenki</h1>
-                <a href="#mypanel" data-role="button" data-iconpos="notext" data-icon="flat-menu" data-theme="a" data-wrapperless="span"></a>
             </div>
             <div data-role="content" ng-controller="SongDetailController">
                 <div class="song-content">
@@ -90,65 +71,6 @@
             </div>
         </div>
 
-        <div data-role="page" id="song-category">
-            <div data-role="panel" data-theme="a" id="mypanel" ng-controller="SongCategoryController">
-                <ul data-role="listview" data-theme="a" data-icon="false">
-                    <li ng-repeat="song in songs | unique: 'category'">
-                        <a href="#song-category2" data-transition="slide" ng-click="selectCategory(song.category)"  value="{{song.id}}">{{song.category}}</a>
-                    </li>
-                    <li>
-                        <a href="#all-songs" data-transition="slide" value="{{song.id}}">All</a>
-                    </li>
-                </ul>
-            </div>
-            <div data-role="header" data-theme="a" data-position="fixed">
-                <h1>Piosenki</h1>
-                <a href="#mypanel" data-role="button" data-iconpos="notext" data-icon="flat-menu" data-theme="a" data-wrapperless="span"></a>
-            </div>
-            <div data-role="content" ng-controller="SongListController">
-                <input type="text" data-role="search" ng-model="query" />
-                <ul class="songs-list">
-                    <li ng-repeat="song in songsFromCategory | filter: query">
-                        <a href="#song-detail" ng-show="ua" data-transition="slide" ng-click="selectSong(song.id)" ng-bind-html-unsafe="song.name" value="{{song.id}}"></a>
-                        <a href="#song-detail" ng-show="ang" data-transition="slide" ng-click="selectSong(song.id)" ng-bind-html-unsafe="song.nameAng" value="{{song.id}}"></a>
-                    </li>
-                </ul>
-            </div>
-            <div data-role="footer" class="ui-bar" data-position="fixed" ng-controller="SongListController">
-                <a ng-click="toUa()" data-role="button">UA</a>
-                <a ng-click="toAng()" data-role="button">PL</a>
-            </div>
-        </div>
-
-        <div data-role="page" id="song-category2">
-            <div data-role="panel" id="mypanel" data-theme="a" ng-controller="SongCategoryController">
-                <ul data-role="listview" data-theme="a" data-icon="false">
-                    <li ng-repeat="song in songs | unique: 'category'">
-                        <a href="#song-category" data-transition="slide" ng-click="selectCategory(song.category)"  value="{{song.id}}">{{song.category}}</a>
-                    </li>
-                    <li>
-                        <a href="#all-songs" data-transition="slide" value="{{song.id}}">All</a>
-                    </li>
-                </ul>
-            </div>
-            <div data-role="header" data-theme="a" data-position="fixed">
-                <h1>Piosenki</h1>
-                <a href="#mypanel" data-role="button" data-iconpos="notext" data-icon="flat-menu" data-theme="a" data-wrapperless="span"></a>
-            </div>
-            <div data-role="content" ng-controller="SongListController">
-                <input type="text" data-role="search" ng-model="query" />
-                <ul class="songs-list">
-                    <li ng-repeat="song in songsFromCategory | filter: query">
-                        <a href="#song-detail" ng-show="ua" data-transition="slide" ng-click="selectSong(song.id)" ng-bind-html-unsafe="song.name" value="{{song.id}}"></a>
-                        <a href="#song-detail" ng-show="ang" data-transition="slide" ng-click="selectSong(song.id)" ng-bind-html-unsafe="song.nameAng" value="{{song.id}}"></a>
-                    </li>
-                </ul>
-            </div>
-            <div data-role="footer" class="ui-bar" data-position="fixed" ng-controller="SongListController">
-                <a ng-click="toUa()" data-role="button">UA</a>
-                <a ng-click="toAng()" data-role="button">PL</a>
-            </div>
-        </div>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
