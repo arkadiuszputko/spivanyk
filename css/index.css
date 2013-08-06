@@ -1,0 +1,194 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+    }
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+pre {
+    font-size: 1.4em;
+    padding: .5em 1em 1em;
+    margin-top: 0;
+    width: auto;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    white-space: pre-wrap;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: .5em 1em;
+    background: #000;
+    color: #fff;
+    z-index: 1;
+}
+.header a {
+    display: inline-block;
+    float: left;
+    padding: .5em;
+    color: #999;
+    background: #030303;
+}
+.content {
+    width: 100%;
+}
+.ukrainian-songs .ui-content .ui-listview {
+    margin: 0;
+    background: none;
+}
+.ukrainian-songs .ui-content .ui-listview  > li {
+    background: none;
+}
+.ukrainian-songs .ui-content .ui-listview  > .ui-btn {
+    border: none;
+    border-bottom: 1px solid #831819;
+}
+.ukrainian-songs .ui-content .ui-listview  > .ui-btn a {
+    text-decoration: none;
+    font-weight: normal;
+}
+.ukrainian-songs .ui-content .ui-listview  > .ui-btn .ui-icon-arrow-r {
+    background-color: transparent;
+}
+.ukrainian-songs  .ui-btn-up-a,
+.ukrainian-songs .ui-bar-a,
+.ukrainian-songs .ui-bar-a .ui-btn-up-a {
+    background-color: #831819;
+    border-color: #831819;
+}
+.ukrainian-songs .ui-bar-a {
+    background: url(images/kwiatek.png) no-repeat right 0 #831819;
+}
+.ukrainian-songs .ui-btn-down-a a,
+.ukrainian-songs .ui-bar-a .ui-btn-down-a a,
+.ukrainian-songs .ui-btn-hover-a a,
+.ukrainian-songs .ui-bar-a .ui-btn-hover-a a,
+.ukrainian-songs  .ui-btn-up-a a,
+.ukrainian-songs .ui-bar-a a,
+.ukrainian-songs .ui-bar-a .ui-btn-up-a a {
+    text-decoration: none;
+    font-weight: normal;
+}
+.ukrainian-songs .ui-btn-hover-a,
+.ukrainian-songs .ui-bar-a .ui-btn-hover-a {
+    background-color: #831819;
+    border-color: #831819;
+}
+.ukrainian-songs .ui-btn-down-a,
+.ukrainian-songs .ui-bar-a .ui-btn-down-a {
+    background-color: #9e1b1d;
+    border-color: #9e1b1d;
+}
+html .ui-body-a {
+    background-color: #831819;
+    border-color: #831819;
+    color: #333;
+}
+.songs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ukrainian-songs .songs-list li a,
+.ukrainian-songs .songs-list li a.ui-link {
+    display: block;
+    padding: .7em 15px;
+    padding-right: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: normal;
+    border-bottom: 1px solid #831819;
+    color: #333;
+    font-size: 1.4em;
+}
+.ukrainian-songs .ui-header .ui-title {
+    font-weight: normal;
+}
+.ui-page, body {
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+}
