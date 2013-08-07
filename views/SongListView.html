@@ -1,0 +1,36 @@
+<!--
+// Pomidoro Mobile Application
+// TheatersControllerView.html
+//
+// created by @sauliuz
+// PopularOwl Labs // www.popularowl.com
+// Visit www.htmlcenter.com 
+// for more mobile application templates
+-->
+  <header class="bar-title">
+    <h1 class="title">Spivanyk</h1>
+  </header>
+
+  <nav class="bar-tab">
+    <ul class="tab-inner">
+      <li class="tab-item" ng-class="{active: ua}">
+        <a ng-click="toUa()">
+          <div class="tab-label">UA</div>
+        </a>
+      </li>
+      <li class="tab-item" ng-class="{active: ang}">
+        <a ng-click="toAng()">
+          <div class="tab-label">PL</div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <ul class="list">
+      <li data-ng-repeat="song in songs">
+        <a ng-show="ua" href="#/song/{{song.id}}" ng-bind-html-unsafe="song.name" value="{{song.id}}"></a>
+        <a ng-show="ang" href="#/song/{{song.id}}" ng-bind-html-unsafe="song.nameAng" value="{{song.id}}"></a>
+      </li>
+    </ul>
+  </div>

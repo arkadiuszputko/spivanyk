@@ -1,0 +1,42 @@
+/*
+Pomidoro App
+app.css
+
+created by @sauliuz
+PopularOwl Labs // www.popularowl.com
+For tutorial on www.htmlcenter.com
+*/
+
+
+.slider {
+  margin-bottom: 0;
+  height: 150px;
+}
+
+.slider li img {
+  width: 100%;
+}
+
+.form-wrapper {
+  padding: 10px;
+}
+
+
+.movieimg {
+  width: 365px;
+  height: 282px;
+}
+
+pre {
+    font-size: 1.4em;
+    padding: .5em 1em 1em;
+    margin-top: 0;
+    width: auto;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    white-space: pre-wrap;
+}
+
+.ui-page, body {
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+}
