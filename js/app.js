@@ -65,7 +65,6 @@ spivanykApp.controller('SongListController', function($scope, $http, $rootScope)
     $rootScope.toAng = function () {
         $rootScope.ua = false;
         $rootScope.ang = true;      
-        console.log('chuj');
     }
 
         
